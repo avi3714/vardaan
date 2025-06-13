@@ -42,6 +42,7 @@ app.use(express.static('public/img'));
 app.use(express.static('public/json'));
 app.use(cookieParser(KEY));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
