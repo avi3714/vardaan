@@ -35,11 +35,7 @@ mongoose.connect(dburi, {
 });
 
 app.use(morgan('dev'));
-app.use(express.static('public'));
-app.use(express.static('public/js'));
-app.use(express.static('public/css'));
-app.use(express.static('public/img'));
-app.use(express.static('public/json'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser(KEY));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
