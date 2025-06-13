@@ -1,0 +1,46 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fdfdfd;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ECG animation container */
+.ecg-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background-color: black;
+}
+
+/* The animated ECG line */
+.ecg-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 600%;
+  height: 250px;
+  background-image: url("data:image/svg+xml,%3Csvg width='4800' height='250' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='0,125 100,125 120,30 140,220 160,125 300,125 320,30 340,220 360,125 500,125 520,30 540,220 560,125 700,125 720,30 740,220 760,125 900,125 920,30 940,220 960,125 1100,125 1120,30 1140,220 1160,125 1300,125 1320,30 1340,220 1360,125 1500,125 1520,30 1540,220 1560,125 1700,125 1720,30 1740,220 1760,125 1900,125 1920,30 1940,220 1960,125 2100,125 2120,30 2140,220 2160,125 2300,125 2320,30 2340,220 2360,125 2500,125 2520,30 2540,220 2560,125 2700,125 2720,30 2740,220 2760,125 2900,125 2920,30 2940,220 2960,125 3100,125 3120,30 3140,220 3160,125 3300,125 3320,30 3340,220 3360,125 3500,125 3520,30 3540,220 3560,125 3700,125 3720,30 3740,220 3760,125 3900,125 3920,30 3940,220 3960,125 4100,125 4120,30 4140,220 4160,125 4300,125 4320,30 4340,220 4360,125 4500,125 4520,30 4540,220 4560,125 4700,125 4720,30 4740,220 4760,125 4800,125' fill='none' stroke='red' stroke-width='3' /%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: contain;
+  animation: moveECG 68s linear infinite;
+  filter: blur(1px);
+  opacity: 0.2;
+}
+
+/* ECG movement animation */
+@keyframes moveECG {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

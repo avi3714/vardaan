@@ -1,0 +1,109 @@
+.brand-logo {
+  height: 90%;
+}
+
+.mynav {
+  background-color: rgba(252, 34, 49, 0.979);
+}
+
+footer {
+  margin-top: 30px;
+}
+
+body footer.page-footer {
+  background-color: rgba(252, 34, 49, 0.979);
+}
+
+body {
+  background-color: rgb(229, 22, 38);
+}
+
+.row {
+  margin-bottom: 2px;
+}
+
+h3 {
+  color: #9f190c;
+}
+
+div.card div.card-content {
+  padding-bottom: 0.1em;
+  padding-top: 0.6rem;
+}
+
+select {
+  display: inherit;
+}
+
+#final {
+  margin-top: 10px;
+}
+.action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.action-row i {
+  margin-left: 10px;
+}
+
+.action-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+
+div div input#phone,
+div div input#first_name,
+div div input#address {
+  margin-bottom: 0;
+}
+/* Muted red tone for footer */
+footer.custom-red {
+  background-color: #880e4f; /* soft crimson */
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+/* Footer links style */
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffccbc; /* light peachy hover */
+}
+input[type="email"] {
+  text-transform: none !important;
+}
+
+
+.footer-links i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.mmm{
+  margin-top:  30px;
+}
+.abc{
+  color:white;
+}

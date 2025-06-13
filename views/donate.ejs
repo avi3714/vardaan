@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vardaan</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="materialize.min.css" />
+    <link href="icon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="donate.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <style>
+      .donation-section {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 12px;
+        background: #fff3f3;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .donation-form input[type="number"] {
+        max-width: 120px;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      .footer-links i {
+        margin-right: 8px;
+      }
+
+      footer.page-footer {
+        background-color: #d32f2f;
+        padding-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="red darken-2 z-depth-2">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo" style="display: flex; align-items: center; gap: 10px;">
+      <img src="/bbi-logo.png" alt="Vardaan Logo" style="height: 50px;">
+      <span class="vardaan-title" style="font-size: 1.8rem; font-weight: bold;">Vardaan</span>
+    </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="btn transparent white-text" href="/"><i class="material-icons left">home</i>Home</a></li>
+          <li><a class="btn transparent white-text" href="/bank"><i class="material-icons left">group</i>Check Donors</a></li>
+          <li><a class="btn transparent white-text" href="/logout"><i class="material-icons left">exit_to_app</i>Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Sidenav (Mobile Menu) -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a class="btn red" href="/"><i class="material-icons left">home</i>Home</a></li>
+      <li><a class="btn red" href="/bank?blood=&city=&zeros=on"><i class="material-icons left">group</i>Check Donors</a></li>
+      <li><a class="btn red" href="/logout"><i class="material-icons left">exit_to_app</i>Log Out</a></li>
+    </ul>
+
+    <!-- Welcome Section -->
+    <div class="container center-align donation-section">
+      <h4 class="indigo-text">Welcome <%= user.name %>.</h4>
+      <p class="flow-text">
+        You have donated <span class="pink-text"><%= user.amount %></span> Pint blood so far.
+      </p>
+
+      <!-- Donation Form -->
+      <form action="/donate" method="post" id="amountForm" class="donation-form">
+        <div class="input-field center-align">
+          <input
+            required
+            id="amount"
+            name="amount"
+            type="number"
+            max="5"
+            min="1"
+            value="1"
+            class="browser-default"
+          />
+          <div class="red-text" style="font-size: 1.5rem;">P</div><br />
+          <a
+            onclick="document.getElementById('amountForm').submit();"
+            class="btn-floating btn-large waves-effect waves-light red"
+          >
+            <i class="material-icons">add</i>
+          </a>
+        </div>
+      </form>
+
+      <h6 class="indigo-text" style="margin-top: 25px;">
+        Last donated <%= user.lastDonated %>
+      </h6>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer red darken-2">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m4">
+            <h5 class="white-text">Connect With Me</h5>
+            <ul class="footer-links">
+              <li>
+                <a href="https://github.com/avi3714" class="white-text" target="_blank">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/singh._avineet/" class="white-text" target="_blank">
+                  <i class="fab fa-instagram"></i> Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/919546669473" class="white-text" target="_blank">
+                  <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col s12 m8">
+            <h5 class="white-text">About Me</h5>
+            <p class="grey-text text-lighten-3">
+              <strong>Vardaan</strong> – A project dedicated to raising awareness about the importance of blood donation and making a difference through technology.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="container center-align grey-text text-lighten-4">
+          © 2025 <strong>Vardaan</strong> | Designed by Avineet Singh
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="jquery.min.js"></script>
+    <script src="materialize.min.js"></script>
+    <script src="donate.js"></script>
+    <script>
+      // Initialize sidenav for mobile menu
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(elems);
+      });
+    </script>
+  </body>
+</html>
