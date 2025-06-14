@@ -7,13 +7,14 @@
   <meta name="description" content="Blood donation awareness project by Avineet Singh." />
   <title>Vardaan</title>
 
-  <!-- Materialize CSS -->
+  
+   <link rel="icon" type="image/png" href="/img/favicon.ico" />
   <link rel="stylesheet" href="/css/materialize.min.css" />
-  <!-- Google Material Icons -->
+  
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!-- Font Awesome -->
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous" />
-  <!-- Custom CSS -->
+  
   <link rel="stylesheet" href="/css/style.css" />
 
   <style>
@@ -63,7 +64,7 @@
 </head>
 <body>
 <div class="page-wrapper">
-  <!-- Navbar -->
+  
   <nav class="mynav red">
     <div class="nav-wrapper container">
       <a href="/" class="brand-logo" style="display: flex; align-items: center; gap: 10px;">
@@ -84,7 +85,7 @@
     </div>
   </nav>
 
-  <!-- Sidenav -->
+
   <ul class="sidenav" id="mobile-demo">
     <li><a class="btn red" href="/donate">Donate</a></li>
     <% if(logged){ %>
@@ -92,9 +93,9 @@
     <% } %>
   </ul>
 
-  <!-- Main Content -->
+ 
   <main>
-    <!-- Search Form -->
+    
     <div class="row container" id="searcher" style="display: none; margin-top: 2rem;">
       <form action="/bank" class="white-text" autocomplete="off">
         <div class="col l3 m2 s12">
@@ -132,7 +133,7 @@
       </form>
     </div>
 
-    <!-- Donor Cards -->
+    
     <div class="row section">
       <% if (docs.length === 0) { %>
         <div class="container center">
@@ -175,7 +176,7 @@
     </div>
   </main>
 
-  <!-- Footer -->
+  
   <footer class="page-footer red darken-2">
     <div class="container">
       <div class="row">
@@ -203,7 +204,7 @@
   </footer>
 </div>
 
-<!-- Scripts -->
+
 <script src="/js/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
 <script src="/js/bank.js"></script>
