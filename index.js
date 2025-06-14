@@ -115,15 +115,15 @@ app.get('/donate', async (req, res) => {
     const user = await userModel.findOne({ phone: req.signedCookies.user });
     if (!user) return res.redirect('/logout');
 
-    res.render('donate', {
-      user: {
-        name: user.name,
-        amount: user.amount,
-        lastDonated: user.createdAt - user.updatedAt === 0
-          ? 'Never.'
-          : user.updatedAt,
-      },
-    });
+   res.render('donate', {
+  user: {
+    name: user.name,
+    amount: user.amount,
+    lastDonated: user.updatedAt.getTime() === user.createdAt.getTime()
+      ? 'Never.'
+      : user.updatedAt.toDateString(),
+  },
+});
   } catch (err) {
     console.error(err);
     res.status(500).send(err.message);
