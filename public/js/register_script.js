@@ -18,7 +18,7 @@ $('#phone').ForceNumericOnly();
 
 $.ajax({
   type: 'GET',
-  url: '/cities.json',
+  url: '/json/cities.json',
   success: function (response) {
     response.forEach((city) => {
       var o = new Option(city, city);

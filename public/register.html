@@ -5,15 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="Description" content="Author: Rishav Rungta, Purpose: I made this site as a larning project and will try and use react soon." />
+  <meta name="Description" content="Blood Donation Platform - Vardaan" />
   <title>Vardaan</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- Compiled latest Css -->
-  <link rel="stylesheet" href="materialize.min.css" />
-  <!--Import Google Icon Font-->
-  <link href="icon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/materialize.min.css" />
+  <link rel="stylesheet" href="/css/icon.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 
   <style>
     body {
@@ -71,52 +74,45 @@
 <body>
   <!-- Nav -->
   <nav class="mynav">
-  <div class="nav-wrapper container" style="font: white">
-    <a href="/" class="brand-logo" style="display: flex; align-items: center; gap: 10px; color: white !important;">
-  <img src="/bbi-logo.png" alt="Vardaan Logo" style="height: 50px;">
-  <span class="white-text"style="font-size: 1.8rem; font-weight: bold;">Vardaan</span>
-</a>
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo" style="display: flex; align-items: center; gap: 10px; color: white !important;">
+        <img src="/img/bbi-logo.png" alt="Vardaan Logo" style="height: 50px;">
+        <span class="white-text" style="font-size: 1.8rem; font-weight: bold;">Vardaan</span>
+      </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="btn transparent" href="/donate">Donate</a></li>
+        <li><a class="btn transparent" href="/bank">Check Donors</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a class="btn transparent" href="/donate">Donate</a></li>
-      <li><a class="btn transparent" href="/bank">Check Donors</a></li>
-    </ul>
-  </div>
-</nav>
-
-
+  <!-- Mobile Nav -->
   <ul class="sidenav" id="mobile-demo">
     <li><a class="btn red" href="/donate">Donate</a></li>
     <li><a class="btn red" href="/bank?blood=&city=&zeros=on">Search Donors</a></li>
   </ul>
 
-  <!-- Main Form -->
+  <!-- Registration Form -->
   <div class="center black-text">
     <h4>Create or Log in to a profile to continue</h4>
   </div>
   <div class="row container" style="margin-top: 20px;">
     <form class="col s12 l5 white-text" action="/register" method="POST" autocomplete="new-password">
-      
-      <!-- Name -->
       <div class="row">
-        <div class="input-field col s12 l12">
+        <div class="input-field col s12">
           <label class="black-text" for="first_name">Name</label>
-          <input autocomplete="new-password" class="black-text" required placeholder="Name" id="first_name" name="name" type="text" />
+          <input required placeholder="Name" id="first_name" name="name" type="text" class="black-text" />
         </div>
       </div>
       <div class="row" id="final">
-        <div class="input-field col s12 l12 m12">
-          <textarea autocomplete="new-password"  id="address" placeholder="Enter your Address" name="address" class="materialize-textarea black-text" required></textarea>
+        <div class="input-field col s12">
+          <textarea id="address" placeholder="Enter your Email" name="address" class="materialize-textarea black-text" required></textarea>
           <label for="address" class="black-text">Email</label>
         </div>
       </div>
-
-      
-
-      <!-- Blood Group -->
       <div class="row">
-        <div class="col s12 m4 l4">
+        <div class="col s12 m4">
           <label class="black-text" for="blood">Blood Group</label>
           <select name="blood" id="blood" class="validate" required>
             <option value="">Select</option>
@@ -126,32 +122,28 @@
             <option value="AB">AB</option>
           </select>
         </div>
-        <div class="col s12 m8 l8">
+        <div class="col s12 m8">
           <label class="black-text" for="rh">Rh Factor</label>
-          <p class="white-text">
+          <p>
             <label>
-              <input class="with-gap white-text white" value="+" name="rh" type="radio" required />
+              <input class="with-gap" value="+" name="rh" type="radio" required />
               <span class="black-text">Positive</span>
             </label>
             <label>
-              <input class="with-gap white-text white" value="-" name="rh" type="radio" required />
+              <input class="with-gap" value="-" name="rh" type="radio" required />
               <span class="black-text">Negative</span>
             </label>
           </p>
         </div>
       </div>
-
-      <!-- Phone -->
       <div class="row">
-        <div class="input-field col s12 l12">
-          <label class="black-text validate">Phone</label>
-          <input autocomplete="new-password" class="black-text" required placeholder="Contact Number" id="phone" name="phone" type="text" pattern="[789][0-9]{9}" />
+        <div class="input-field col s12">
+          <label class="black-text">Phone</label>
+          <input required placeholder="Contact Number" id="phone" name="phone" type="text" pattern="[789][0-9]{9}" class="black-text" />
         </div>
       </div>
-
-      <!-- City -->
       <div class="row">
-        <div class="col s12 l12">
+        <div class="col s12">
           <label class="black-text" for="city">City</label>
           <select name="city" id="city" class="validate" required>
             <option value="">Select</option>
@@ -159,78 +151,60 @@
         </div>
       </div>
 
-      <!-- Address -->
-      
-
-      <!-- Age Confirmation -->
       <div class="center">
         <label class="black-text">
           <input type="checkbox" id="ageConfirm" required />
           <span class="black-text">I confirm that I am at least 18 years old.</span><br />
         </label>
-        <button class="btn waves-effect waves-light red lighten-1" type="submit">Register
-          <i class="material-icons right">send</i>
+        <button class="btn waves-effect waves-light red lighten-1" type="submit">
+          Register <i class="material-icons right">send</i>
         </button>
-        <button class="btn waves-effect waves-light red lighten-1" type="reset">Reset
-          <i class="material-icons right">delete</i>
+        <button class="btn waves-effect waves-light red lighten-1" type="reset">
+          Reset <i class="material-icons right">delete</i>
         </button>
       </div>
     </form>
 
-    <!-- Right-side image -->
     <div class="col l6 hide-on-med-and-down offset-l1 center">
-      <img src="donate.jpg" alt="Donate" class="center" />
+      <img src="/img/donate.jpg" alt="Donate" class="responsive-img center" />
     </div>
   </div>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous" />
 
   <!-- Footer -->
   <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col s12 m8 l9">
-          <h3 class="grey-text text-lighten-4">Vardaan </h3>
+          <h3 class="grey-text text-lighten-4">Vardaan</h3>
           <p>A project dedicated to raising awareness about the importance of blood donation and making a difference through technology.</p>
         </div>
         <div class="col s12 m4 l3">
           <h5 class="white-text">Contact</h5>
           <ul>
-            <li><i class="fab fa-instagram"></i><a class="grey-text text-lighten-4" href="https://www.instagram.com/"> Instagram</a></li>
-            <li><i class="fab fa-github"></i><a class="grey-text text-lighten-4" href="https://github.com/avi3714"> Github</a></li>
-            <li>
-              <i class="fab fa-whatsapp"></i>
-              <a class="grey-text text-lighten-4" href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">WhatsApp Chat</a>
-            </li>
+            <li><i class="fab fa-instagram"></i> <a class="grey-text text-lighten-4" href="https://www.instagram.com/">Instagram</a></li>
+            <li><i class="fab fa-github"></i> <a class="grey-text text-lighten-4" href="https://github.com/avi3714">GitHub</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a class="grey-text text-lighten-4" href="https://wa.me/919876543210">WhatsApp</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-        2025 @ Vardaan
-        <a class="grey-text text-lighten-4 right" href="#">Thanks</a>
+        © 2025 Vardaan | <a class="grey-text text-lighten-4 right" href="#">Thanks</a>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="jquery.min.js"></script>
-  <script src="materialize.min.js"></script>
-  <script src="register_script.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
+  <script src="/js/register_script.js"></script>
 
   <script>
-    // Toggle address style
     const checkbox = document.getElementById('ageConfirm');
     const textarea = document.getElementById('address');
-
     checkbox.addEventListener('change', () => {
-      if (checkbox.checked) {
-        textarea.classList.add('active');
-      } else {
-        textarea.classList.remove('active');
-      }
+      textarea.classList.toggle('active', checkbox.checked);
     });
   </script>
 </body>
