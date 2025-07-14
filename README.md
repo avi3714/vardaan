@@ -54,8 +54,6 @@
 | PDF Gen      | pdfkit, nodemailer  |
 | Deployment   | GitHub + Railway    |
 
----
-
-
+--
 
 
