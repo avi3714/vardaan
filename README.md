@@ -10,7 +10,7 @@
 ## 🚀 Features
 
 ### 🔍 Smart Donor Search
-- Filter donors by **blood group, location, availability**, and more.
+- Filter donors by **blood group, location, availability**,and more.
 
 
 ### 🧾 Download & Email Donation Certificate
